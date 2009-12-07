@@ -6,18 +6,20 @@
     %title= "Homepage"
 
   %body
-    #containter
+    %div{:id => "container", :class => "#{@background}"}
       #header
         %img{:src => "images/logo.png"}
       #nav
         %ul
           %li
-            %a{:href => "/"} Strona Główna
+            %a{:href => "/"}
+              Strona
+              %span.red Główna
           %li
-            %a.odd{:href => "/kontakt"} Kontakt
+            %a{:href => "/kontakt"} Kontakt
           %li
-            %a{:href => "/galeria"} Galeria
+            %a.red{:href => "/galeria"} Galeria
           %li
-            %a.odd{:href => "/informacje"} Informacje
+            %a{:href => "/informacje"} Informacje
       #content
         = yield

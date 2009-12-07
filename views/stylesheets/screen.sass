@@ -2,6 +2,9 @@
 !blueprint_container_size = 960px
 !blueprint_grid_margin  = 10px
 !blueprint_grid_width   = (!blueprint_container_size + !blueprint_grid_margin) / !blueprint_grid_columns - !blueprint_grid_margin
+!red_color = #a50603
+!black_color = #020202
+
 
 @import blueprint
 @import compass/reset, compass/utilities
@@ -12,26 +15,46 @@
 +blueprint-grid
 +blueprint-debug
 
+body
+  color= !black_color
+
 a
   +hover-link
+  +link-colors(!black_color, !black_color, !black_color, !black_color, !black_color)
 #container
   +container
-  //background-image: url('/images/home-bg.jpg')
+  border-left: solid 1px
+  border-right: solid 1px
+  &.home
+    background-image: url('/images/home-bg.jpg')
+    background-repeat: no-repeat
+    background-position: left top
 
 #header
   +column(12, true)
-  height: 60px
+  height: 90px
   padding-right= !blueprint_grid_margin
   padding-top= 2* !blueprint_grid_margin
   text-align: right
-  +showgrid
 
 #nav
   +column(6, true)
   +no-bullets
   +inline-list
+  font-size: 20px
+  border-top: solid 2px
+  border-bottom: solid 1px
+  ul
+    margin: 0
   li
     padding-left= !blueprint_grid_margin
+  .red
+    color= !red_color
 
 #content
-  +column(12, true)
+  padding-top= 2*!blueprint_grid_margin
+  +push(1)
+  +column(10, true)
+  font-size: 15px
+  height: 430px
+  //background-image: url('/images/home-bg.jpg')

@@ -23,5 +23,11 @@ get "/stylesheets/screen.css" do
 end
 
 get '/' do
+  @background = "home"
   haml :home
+end
+
+get '/kontakt' do
+  @background = "contact"
+  haml :contact
 end
