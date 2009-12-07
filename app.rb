@@ -2,21 +2,24 @@
 
 configure do
   set :haml, { :format => :html5 }
+  set :app_file, __FILE__
+
   Compass.configuration do |config|
-    config.project_path = File.dirname(__FILE__)
+    config.project_path = Sinatra::Application.root
     config.sass_dir     = File.join('views', 'stylesheets')
     # config.css_dir = "public/stylesheets/compiled"
     config.images_dir = File.join('public', 'images')
     # config.output_style = :compact
     config.http_images_path = "/images"
+    config.http_path = "/"
+    config.http_stylesheets_path = "/stylesheets"
   end
 end
 
 get "/stylesheets/screen.css" do
   content_type 'text/css'
 
-  # Use views/stylesheets & blueprint's stylesheet dirs in the Sass load path
-  sass :"stylesheets/screen", :sass => Compass.sass_engine_options
+  sass :"stylesheets/screen", Compass.sass_engine_options
 end
 
 get '/' do

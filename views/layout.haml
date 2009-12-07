@@ -1,10 +1,23 @@
 !!! strict
 %html
   %head
-    %link{:rel=>"stylesheet", :href=>"/stylesheets/screen.css"}
+    %meta{:content=> "text/html; charset=utf-8"}
+    %link{:href=>"/stylesheets/screen.css", :media=>"screen", :rel=>"stylesheet", :type=>"text/css"}
     %title= "Homepage"
 
   %body
     #containter
+      #header
+        %img{:src => "images/logo.png"}
+      #nav
+        %ul
+          %li
+            %a{:href => "/"} Strona Główna
+          %li
+            %a.odd{:href => "/kontakt"} Kontakt
+          %li
+            %a{:href => "/galeria"} Galeria
+          %li
+            %a.odd{:href => "/informacje"} Informacje
       #content
         = yield

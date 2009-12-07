@@ -9,15 +9,29 @@
 
 
 +blueprint-typography
++blueprint-grid
 +blueprint-debug
 
-body
-  color: green
 a
   +hover-link
 #container
   +container
+  //background-image: url('/images/home-bg.jpg')
+
+#header
+  +column(12, true)
+  height: 60px
+  padding-right= !blueprint_grid_margin
+  padding-top= 2* !blueprint_grid_margin
+  text-align: right
   +showgrid
+
+#nav
+  +column(6, true)
+  +no-bullets
+  +inline-list
+  li
+    padding-left= !blueprint_grid_margin
 
 #content
   +column(12, true)
