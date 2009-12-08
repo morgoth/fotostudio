@@ -25,8 +25,21 @@ a
   +container
   border-left: solid 1px
   border-right: solid 1px
+  border-bottom: solid 1px
   &.home
     background-image: url('/images/home-bg.jpg')
+    background-repeat: no-repeat
+    background-position: left top
+  &.contact
+    background-image: url('/images/contact-bg.jpg')
+    background-repeat: no-repeat
+    background-position: left top
+  &.gallery
+    background-image: url('/images/gallery-bg.jpg')
+    background-repeat: no-repeat
+    background-position: left top
+  &.info
+    background-image: url('/images/info-bg.jpg')
     background-repeat: no-repeat
     background-position: left top
 
@@ -56,5 +69,5 @@ a
   +push(1)
   +column(10, true)
   font-size: 15px
-  height: 430px
+  min-height: 360px
   //background-image: url('/images/home-bg.jpg')

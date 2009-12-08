@@ -1,4 +1,4 @@
-%w(rubygems sinatra haml sass compass).each { |dependency| require dependency }
+%w(rubygems sinatra haml sass compass picasa).each { |dependency| require dependency }
 
 configure do
   set :haml, { :format => :html5 }
@@ -30,4 +30,15 @@ end
 get '/kontakt' do
   @background = "contact"
   haml :contact
+end
+
+get '/informacje' do
+  @background = "info"
+  haml :info
+end
+
+get '/galeria' do
+  @background = "gallery"
+  @galleries = Picasa.albums(:google_user => 'w.wnetrzak@gmail.com')
+  haml :gallery
 end
