@@ -1,7 +1,10 @@
 %h2.upcase
   Galeria
-%ul
-- @galleries.each do |gallery|
-  %li
-    %a{:href => "#{gallery[:slideshow]}"}
-      = gallery[:title]
+.photos
+  - @galleries.each do |gallery|
+    .photo
+      .element
+        %a{:href => "#{gallery[:slideshow]}"}
+          %img{:src => gallery[:thumbnail]}
+      .member
+        = gallery[:title]

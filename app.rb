@@ -23,22 +23,18 @@ get "/stylesheets/screen.css" do
 end
 
 get '/' do
-  @background = "home"
   haml :home
 end
 
 get '/kontakt' do
-  @background = "contact"
   haml :contact
 end
 
 get '/informacje' do
-  @background = "info"
   haml :info
 end
 
 get '/galeria' do
-  @background = "gallery"
   @galleries = Picasa.albums(:google_user => 'w.wnetrzak@gmail.com')
   @galleries.each_with_index do |gallery, i|
     @galleries[i][:slideshow] = Picasa.photos(:google_user => 'w.wnetrzak@gmail.com', :album_id => gallery[:id])[:slideshow]

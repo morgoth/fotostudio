@@ -19,6 +19,7 @@
 body
   color= !white_color
   background-color= !black_color
+  font-family: arial
 
 a
   +hover-link
@@ -55,13 +56,6 @@ h2
     background-repeat: no-repeat
     background-position: left top
 
-#header
-  +column(12, true)
-  height: 90px
-  padding-right= !blueprint_grid_margin
-  padding-top= 2* !blueprint_grid_margin
-  text-align: right
-
 #nav
   +column(12, true)
   +no-bullets
@@ -89,4 +83,15 @@ h2
   +no-bullets
   font-size: 15px
   min-height: 280px
-  //background-image: url('/images/home-bg.jpg')
+.photos
+  text-align: center
+  .photo
+    display: inline-block
+    text-align: center
+    margin-right= 4 * !blueprint_grid_margin
+  .member
+    display: block
+.center
+  text-align: center
+.bigger
+  font-size: 20px
