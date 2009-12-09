@@ -2,4 +2,5 @@ Galeria
 %ul
 - @galleries.each do |gallery|
   %li
-    = gallery[:title]
+    %a{:href => "#{gallery[:slideshow]}"}
+      = gallery[:title]
