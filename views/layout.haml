@@ -6,9 +6,7 @@
     %title= "Kasia Frychel - fotografia"
 
   %body
-    %div{:id => "container", :class => "#{@background}"}
-      #header
-        %img{:src => "images/logo.png"}
+    %div{:id => "container"}
       #nav
         %ul
           %li
@@ -21,5 +19,6 @@
             %a.red{:href => "/galeria"} Galeria
           %li
             %a{:href => "/informacje"} Informacje
+      #logo
       #content
         = yield

@@ -4,6 +4,7 @@
 !blueprint_grid_width   = (!blueprint_container_size + !blueprint_grid_margin) / !blueprint_grid_columns - !blueprint_grid_margin
 !red_color = #a50603
 !black_color = #020202
+!white_color = #fff
 
 
 @import blueprint
@@ -16,16 +17,27 @@
 +blueprint-debug
 
 body
-  color= !black_color
+  color= !white_color
+  background-color= !black_color
 
 a
   +hover-link
-  +link-colors(!black_color, !black_color, !black_color, !black_color, !black_color)
+  +link-colors(!white_color, !white_color, !white_color, !white_color, !white_color)
+
+h2
+  color= !white_color
+  text-align: center
+
+.red
+  color= !red_color !important
+
+.upcase
+  text-transform: uppercase
+
 #container
   +container
   border-left: solid 1px
   border-right: solid 1px
-  border-bottom: solid 1px
   &.home
     background-image: url('/images/home-bg.jpg')
     background-repeat: no-repeat
@@ -51,23 +63,30 @@ a
   text-align: right
 
 #nav
-  +column(6, true)
+  +column(12, true)
   +no-bullets
   +inline-list
+  padding-top= 2 * !blueprint_grid_margin
+  padding-left= !blueprint_grid_margin
   font-size: 20px
-  border-top: solid 2px
-  border-bottom: solid 1px
+  height: 40px
   ul
     margin: 0
   li
-    padding-left= !blueprint_grid_margin
-  .red
-    color= !red_color
+    padding-left= 2 * !blueprint_grid_margin
+
+#logo
+  +column(12, true)
+  height: 148px
+  background-image: url('/images/eyes.jpg')
+  background-repeat: no-repeat
+  background-position: left top
 
 #content
-  padding-top= 2*!blueprint_grid_margin
+  padding-top= 4*!blueprint_grid_margin
   +push(1)
   +column(10, true)
+  +no-bullets
   font-size: 15px
-  min-height: 360px
+  min-height: 280px
   //background-image: url('/images/home-bg.jpg')
