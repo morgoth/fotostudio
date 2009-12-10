@@ -26,18 +26,18 @@ get '/' do
   haml :home
 end
 
-get '/kontakt' do
+get '/kontakt/?' do
   haml :contact
 end
 
-get '/informacje' do
+get '/informacje/?' do
   haml :info
 end
 
-get '/galeria' do
-  @galleries = Picasa.albums(:google_user => 'w.wnetrzak@gmail.com')
+get '/galeria/?' do
+  @galleries = Picasa.albums(:google_user => 'kasiafrychel.foto@gmail.com')
   @galleries.each_with_index do |gallery, i|
-    @galleries[i][:slideshow] = Picasa.photos(:google_user => 'w.wnetrzak@gmail.com', :album_id => gallery[:id])[:slideshow]
+    @galleries[i][:slideshow] = Picasa.photos(:google_user => 'kasiafrychel.foto@gmail.com', :album_id => gallery[:id])[:slideshow]
   end
   haml :gallery
 end
