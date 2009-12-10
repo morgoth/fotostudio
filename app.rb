@@ -1,7 +1,6 @@
 %w(rubygems sinatra haml sass compass picasa).each { |dependency| require dependency }
 
 configure do
-  set :haml, { :format => :html5 }
   set :app_file, __FILE__
 
   Compass.configuration do |config|
