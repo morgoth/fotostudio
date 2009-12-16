@@ -8,8 +8,13 @@
     %dd e-mail: kontakt@kasiafrychel.pl
     %dd tel: 888-769-887
 .wihajster
+- if @errors
+  .errors
+    = @errors
 %form{:method => "post", :action => "/send", :class => "center"}
-  %input{:type => "text", :size => 60, :name => "email", :value => params['email']}
-  %textarea{:rows => 20, :cols => 60, :name => "body"}
+  %label{:for => "email_input"} Email:
+  %input{:type => "text", :id => 'email_input', :size => 60, :name => "email", :value => params['email']}
+  %label{:for => "body_input"} Treść:
+  %textarea{:rows => 20, :id => "body_input", :cols => 60, :name => "body"}
     = params['body']
-  %input{:type => "submit", :name => "commit", :value => "wyślij wiadomość"}
+  %input{:type => "submit", :id => "submit_input", :name => "commit", :value => "Wyślij wiadomość"}

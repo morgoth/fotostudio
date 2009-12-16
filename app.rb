@@ -17,8 +17,15 @@ configure do
 end
 
 helpers do
-  def valid?(params = {})
-    not params.values.any? { |p| p.blank? }
+  def valid?(attributes = {})
+    attributes.values.all? { |p| !p.blank? } and email_valid?(attributes['email'])
+  end
+
+  def email_valid?(email)
+    email_name_regex  = '[A-Z0-9_\.%\+\-]+'
+    domain_head_regex = '(?:[A-Z0-9\-]+\.)+'
+    domain_tld_regex  = '(?:[A-Z]{2,4}|museum|travel)'
+    email =~ /^#{email_name_regex}@#{domain_head_regex}#{domain_tld_regex}$/i
   end
 end
 
@@ -52,7 +59,7 @@ post '/send' do
   if valid?(params)
     Pony.mail(:to => "admin@kasiafrychel.pl",
               :subject=> "Wiadomość ze strony",
-              :body => params['body'],
+              :body => erb(:email),
               :via => :smtp, :smtp => {
                 :host => 'smtp.gmail.com',
                 :port => '587',
@@ -65,6 +72,7 @@ post '/send' do
              )
     redirect '/'
   else
+    @errors = "Wprowadzone dane nie są poprawne"
     haml :contact
   end
 end
