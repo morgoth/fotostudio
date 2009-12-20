@@ -64,7 +64,7 @@ end
 
 post '/send' do
   if valid?(params)
-    Pony.mail(:to => "admin@kasiafrychel.pl",
+    Pony.mail(:to => "stronka@kasiafrychel.pl",
               :subject=> "Wiadomość ze strony",
               :body => erb(:email),
               :via => :smtp, :smtp => {
