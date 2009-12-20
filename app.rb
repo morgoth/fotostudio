@@ -1,8 +1,10 @@
 # encoding: UTF-8
 
 %w(rubygems sinatra haml sass compass picasa pony rack-flash).each { |dependency| require dependency }
+require 'lib/google_analytics'
 
 use Rack::Flash
+use Rack::GoogleAnalytics, ENV['GOOGLE_ANALYTICS_ID'] || 'xxxx-x'
 
 configure do
   set :app_file, __FILE__
