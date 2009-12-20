@@ -21,4 +21,7 @@
             %a{:href => "/informacje"} Informacje
       #logo
       #content
+        - if @flash
+          .flash
+            = @flash
         = yield

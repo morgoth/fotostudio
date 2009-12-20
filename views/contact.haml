@@ -12,9 +12,16 @@
   .errors
     = @errors
 %form{:method => "post", :action => "/send", :class => "center"}
-  %label{:for => "email_input"} Email:
-  %input{:type => "text", :id => 'email_input', :size => 60, :name => "email", :value => params['email']}
-  %label{:for => "body_input"} Treść:
-  %textarea{:rows => 20, :id => "body_input", :cols => 60, :name => "body"}
-    = params['body']
-  %input{:type => "submit", :id => "submit_input", :name => "commit", :value => "Wyślij wiadomość"}
+  %ul.inputs
+    %li
+      %label{:for => "email_input"} Twój email:
+    %li
+      %input{:type => "text", :id => 'email_input', :name => "email", :value => params['email']}
+    %li
+      %label{:for => "body_input"} Treść wiadomości:
+    %li
+      %textarea{:rows => 20, :id => "body_input", :name => "body"}
+        = params['body']
+  %ul.buttons
+    %li
+      %input{:type => "submit", :id => "submit_input", :name => "commit", :value => "Wyślij wiadomość"}

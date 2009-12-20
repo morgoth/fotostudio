@@ -1,10 +1,13 @@
 # encoding: UTF-8
 
-%w(rubygems sinatra haml sass compass picasa pony).each { |dependency| require dependency }
+%w(rubygems sinatra haml sass compass picasa pony rack-flash).each { |dependency| require dependency }
+
+use Rack::Flash
 
 configure do
   set :app_file, __FILE__
   set :haml, { :format => :html5 }
+  set :sessions, true
 
   Compass.configuration do |config|
     config.project_path = Sinatra::Application.root
@@ -27,6 +30,10 @@ helpers do
     domain_tld_regex  = '(?:[A-Z]{2,4}|museum|travel)'
     email =~ /^#{email_name_regex}@#{domain_head_regex}#{domain_tld_regex}$/i
   end
+end
+
+before do
+  @flash = flash[:notice]
 end
 
 get "/stylesheets/screen.css" do
@@ -70,6 +77,7 @@ post '/send' do
                 :tls => true
                }
              )
+    flash[:notice] = 'Wiadomość została wysłana'
     redirect '/'
   else
     @errors = "Wprowadzone dane nie są poprawne"
