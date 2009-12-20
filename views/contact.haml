@@ -1,12 +1,13 @@
 %h2.upcase
-  Kontakt
+  Kont
+  %span.red> akt
 
 .center.bigger
-  %dl
-    %dd Katarzyna Frychel-Wnętrzak
-    %dd GILOWICE
-    %dd e-mail: kontakt@kasiafrychel.pl
-    %dd tel: 888-769-887
+  %ul
+    %li Katarzyna Frychel-Wnętrzak
+    %li GILOWICE
+    %li e-mail: kontakt@kasiafrychel.pl
+    %li tel: 888-769-887
 .wihajster
 - if @errors
   .errors
@@ -14,12 +15,14 @@
 %form{:method => "post", :action => "/send", :class => "center"}
   %ul.inputs
     %li
-      %label{:for => "email_input"} Twój email:
-    %li
+      %label{:for => "email_input"}
+        Twój email
+        %abbr{:class => 'required', :title => "Pole wymagane"}> *
       %input{:type => "text", :id => 'email_input', :name => "email", :value => params['email']}
     %li
-      %label{:for => "body_input"} Treść wiadomości:
-    %li
+      %label{:for => "body_input"}
+        Treść wiadomości
+        %abbr{:class => 'required', :title => "Pole wymagane"}> *
       %textarea{:rows => 20, :id => "body_input", :name => "body"}
         = params['body']
   %ul.buttons

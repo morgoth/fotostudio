@@ -90,8 +90,9 @@ h2
   background-position: top
 
 .errors
+  +push(2)
+  +column(6, true)
   width= 6 * !blueprint_grid_width
-  margin: 0 0 1.5em 1.5em
   padding: 0.5em 0 0.5em 0.5em
   background-color: #d23b37
   color= !black_color
@@ -103,15 +104,33 @@ h2
   padding: 0.5em 0 0.5em 0.5em
   text-align: center
   +push(2)
-  +column(6)
+  +column(6, true)
   float: none
   display: block
   border= 2px "solid" #02820b
 
+abbr
+  border: 0
+  font-variant: normal
+  font-weight: normal
+
+.required
+  color= !red_color
+
 form
+  +push(2)
+  +column(6, true)
   .inputs
     input, textarea
       width= 6 * !blueprint_grid_width
+      display: block
+  label
+    dipslay: block
   ul
+    margin: 0
     text-align: left
+    li
+      margin-bottom: 1em
+
+
 
