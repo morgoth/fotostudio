@@ -56,6 +56,10 @@ get '/informacje/?' do
   haml :info
 end
 
+get '/cennik/?' do
+  haml :pricing
+end
+
 get '/galeria/?' do
   @galleries = Picasa.albums(:google_user => 'kasiafrychel.foto')
   @galleries.each do |gallery|
