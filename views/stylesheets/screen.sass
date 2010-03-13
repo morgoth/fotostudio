@@ -68,8 +68,6 @@ h2
   font-size: 15px
   min-height: 280px
 
-  #pricing
-
 .photos
   text-align: center
   .photo
@@ -83,6 +81,8 @@ h2
   text-align: center
 .bigger
   font-size: 20px
+.no_bullets
+  +no-bullets
 .wihajster
   height: 65px
   margin-bottom= 2 * !blueprint_grid_margin
@@ -122,6 +122,7 @@ abbr
 form
   +push(2)
   +column(6, true)
+  +no-bullets
   .inputs
     input, textarea
       width= 6 * !blueprint_grid_width
