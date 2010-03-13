@@ -62,9 +62,6 @@ end
 
 get '/galeria/?' do
   @galleries = Picasa.albums(:google_user => 'kasiafrychel.foto')
-  @galleries.each do |gallery|
-    gallery.merge!(:slideshow => Picasa.photos(:google_user => 'kasiafrychel.foto', :album_id => gallery[:id])[:slideshow])
-  end
   haml :gallery
 end
 
