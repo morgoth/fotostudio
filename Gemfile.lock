@@ -1,0 +1,57 @@
+--- 
+dependencies: 
+  compass: 
+    group: 
+    - :default
+    version: ">= 0"
+  pony: 
+    group: 
+    - :default
+    version: ">= 0"
+  haml: 
+    group: 
+    - :default
+    version: ">= 0"
+  rack-flash: 
+    group: 
+    - :default
+    version: ">= 0"
+  sinatra: 
+    group: 
+    - :default
+    version: ">= 0"
+  picasa: 
+    group: 
+    - :default
+    version: ">= 0"
+specs: 
+- activesupport: 
+    version: 2.3.8
+- haml: 
+    version: 3.0.9
+- compass: 
+    version: 0.10.2
+- mime-types: 
+    version: "1.16"
+- polyglot: 
+    version: 0.3.1
+- treetop: 
+    version: 1.4.8
+- mail: 
+    version: 2.2.1
+- xml-simple: 
+    version: 1.0.12
+- picasa: 
+    version: 0.2.1
+- pony: 
+    version: "1.0"
+- rack: 
+    version: 1.1.0
+- rack-flash: 
+    version: 0.1.1
+- sinatra: 
+    version: "1.0"
+hash: 7c51a0da15bb68787c5590c264b0f4a3e91665bb
+sources: 
+- Rubygems: 
+    uri: http://rubygems.org
