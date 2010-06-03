@@ -1,36 +1,37 @@
-!blueprint_grid_columns = 12
-!blueprint_container_size = 960px
-!blueprint_grid_margin  = 10px
-!blueprint_grid_width   = (!blueprint_container_size + !blueprint_grid_margin) / !blueprint_grid_columns - !blueprint_grid_margin
-!red_color = #a50603
-!black_color = #020202
-!white_color = #fff
-
+$blueprint_grid_columns: 12
+$blueprint_container_size: 960px
+$blueprint_grid_margin: 10px
+$blueprint_grid_width: ($blueprint_container_size + $blueprint_grid_margin) / $blueprint_grid_columns - $blueprint_grid_margin
+$red_color: #a50603
+$black_color: #020202
+$white_color: white
 
 @import blueprint
-@import compass/reset, compass/utilities
-@import blueprint/modules/debug
+@import compass/reset
 
+@import compass/utilities
 
 +blueprint-typography
+
 +blueprint-grid
+
 +blueprint-debug
 
 body
-  color= !white_color
-  background-color= !black_color
+  color: $white_color
+  background-color: $black_color
   font-family: arial
 
 a
   +hover-link
-  +link-colors(!white_color, !white_color, !white_color, !white_color, !white_color)
+  +link-colors($white_color, $white_color, $white_color, $white_color, $white_color)
 
 h2
-  color= !white_color
+  color: $white_color
   text-align: center
 
 .red
-  color= !red_color !important
+  color: $red_color !important
 
 .upcase
   text-transform: uppercase
@@ -45,24 +46,24 @@ h2
   +column(12, true)
   +no-bullets
   +inline-list
-  padding-top= 2 * !blueprint_grid_margin
-  padding-left= !blueprint_grid_margin
+  padding-top: 2 * $blueprint_grid_margin
+  padding-left: $blueprint_grid_margin
   font-size: 20px
   height: 40px
   ul
     margin: 0
   li
-    padding-left= 2 * !blueprint_grid_margin
+    padding-left: 2 * $blueprint_grid_margin
 
 #logo
   +column(12, true)
   height: 148px
-  background-image: url('/images/eyes.jpg')
+  background-image: url("/images/eyes.jpg")
   background-repeat: no-repeat
   background-position: left top
 
 #content
-  padding-top= 4*!blueprint_grid_margin
+  padding-top: 4 * $blueprint_grid_margin
   +push(1)
   +column(10, true)
   font-size: 15px
@@ -73,35 +74,40 @@ h2
   .photo
     display: inline-block
     text-align: center
-    margin-right= 4 * !blueprint_grid_margin
-    margin-top= 2 * !blueprint_grid_margin
+    margin-right: 4 * $blueprint_grid_margin
+    margin-top: 2 * $blueprint_grid_margin
   .member
     display: block
+
 .center
   text-align: center
+
 .bigger
   font-size: 20px
+
 .no_bullets
   +no-bullets
+
 .last
   padding-bottom: 22px
+
 .wihajster
   height: 65px
-  margin-bottom= 2 * !blueprint_grid_margin
-  margin-top= 2 * !blueprint_grid_margin
-  background-image: url('/images/wihajster.png')
+  margin-bottom: 2 * $blueprint_grid_margin
+  margin-top: 2 * $blueprint_grid_margin
+  background-image: url("/images/wihajster.png")
   background-repeat: no-repeat
   background-position: top
 
 .errors
   +push(2)
   +column(6, true)
-  width= 6 * !blueprint_grid_width
+  width: 6 * $blueprint_grid_width
   padding: 0.5em 0 0.5em 0.5em
   background-color: #d23b37
-  color= !black_color
-  border= 2px "solid"
-  border-color= !red_color
+  color: $black_color
+  border: 2px solid
+  border-color: $red_color
 
 .flash
   background-color: #33c03c
@@ -111,7 +117,7 @@ h2
   +column(6, true)
   float: none
   display: block
-  border= 2px "solid" #02820b
+  border: 2px solid #02820b
 
 abbr
   border: 0
@@ -119,7 +125,7 @@ abbr
   font-weight: normal
 
 .required
-  color= !red_color
+  color: $red_color
 
 form
   +push(2)
@@ -127,7 +133,7 @@ form
   +no-bullets
   .inputs
     input, textarea
-      width= 6 * !blueprint_grid_width
+      width: 6 * $blueprint_grid_width
       display: block
   label
     dipslay: block
@@ -136,6 +142,3 @@ form
     text-align: left
     li
       margin-bottom: 1em
-
-
-
