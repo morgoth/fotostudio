@@ -18,7 +18,7 @@
       %label{:for => "email_input"}
         Twój email
         %abbr{:class => 'required', :title => "Pole wymagane"}> *
-      %input{:type => "text", :id => 'email_input', :name => "email", :value => params['email']}
+      %input{:type => "email", :id => 'email_input', :name => "email", :autofocus => true, :value => params['email']}
     %li
       %label{:for => "body_input"}
         Treść wiadomości

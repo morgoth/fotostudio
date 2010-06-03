@@ -1,4 +1,4 @@
-!!! strict
+!!!
 %html
   %head
     %meta{:charset => "UTF-8"}
@@ -8,7 +8,7 @@
     %title= "Kasia Frychel - fotografia"
 
   %body
-    %div{:id => "container"}
+    #container
       #nav
         %ul
           %li
@@ -29,3 +29,5 @@
           .flash
             = @flash
         = yield
+      #footer
+        &copy; 2010 Katarzyna Frychel-Wnętrzak

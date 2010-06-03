@@ -12,9 +12,7 @@ $white_color: white
 @import compass/utilities
 
 +blueprint-typography
-
 +blueprint-grid
-
 +blueprint-debug
 
 body
@@ -69,6 +67,12 @@ h2
   font-size: 15px
   min-height: 280px
 
+#footer
+  +push(1)
+  +column(10, true)
+  text-align: center
+  font-size: smaller
+
 .photos
   text-align: center
   .photo
@@ -100,21 +104,22 @@ h2
   background-position: top
 
 .errors
-  +push(2)
-  +column(6, true)
-  width: 6 * $blueprint_grid_width
-  padding: 0.5em 0 0.5em 0.5em
+  width: 5 * $blueprint_grid_width
+  margin: auto
+  padding: 0.5em 0
+  text-align: center
   background-color: #d23b37
   color: $black_color
   border: 2px solid
   border-color: $red_color
 
 .flash
+  width: 6 * $blueprint_grid_width
+  margin: auto
+  margin-bottom: 1em
   background-color: #33c03c
   padding: 0.5em 0 0.5em 0.5em
   text-align: center
-  +push(2)
-  +column(6, true)
   float: none
   display: block
   border: 2px solid #02820b
@@ -128,17 +133,22 @@ abbr
   color: $red_color
 
 form
-  +push(2)
-  +column(6, true)
+  width: 6 * $blueprint_grid_width
+  margin: auto
+  margin-top: 1em
   +no-bullets
   .inputs
+    margin-left: $blueprint_grid_width / 2
     input, textarea
-      width: 6 * $blueprint_grid_width
+      width: 5 * $blueprint_grid_width
       display: block
+  .buttons
+    margin-left: $blueprint_grid_width / 2
   label
     dipslay: block
   ul
     margin: 0
+    padding: 0
     text-align: left
     li
       margin-bottom: 1em
