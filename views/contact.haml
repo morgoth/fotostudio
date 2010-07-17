@@ -5,7 +5,7 @@
 .center.bigger
   %ul.no_bullets
     %li Katarzyna Frychel-Wnętrzak
-    %li GILOWICE
+    %li Gilowice
     %li e-mail: kontakt@kasiafrychel.pl
     %li tel: 888-769-887
 .wihajster
@@ -18,12 +18,12 @@
       %label{:for => "email_input"}
         Twój email
         %abbr{:class => 'required', :title => "Pole wymagane"}> *
-      %input{:type => "email", :id => 'email_input', :name => "email", :autofocus => true, :value => params['email']}
+      %input{:type => "email", :id => 'email_input', :name => "email", :autofocus => true, :required => true, :value => params['email']}
     %li
       %label{:for => "body_input"}
         Treść wiadomości
         %abbr{:class => 'required', :title => "Pole wymagane"}> *
-      %textarea{:rows => 20, :id => "body_input", :name => "body"}
+      %textarea{:rows => 20, :id => "body_input", :name => "body", :required => true}
         = params['body']
   %ul.buttons
     %li

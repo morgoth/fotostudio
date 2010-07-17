@@ -10,6 +10,7 @@ $white_color: white
 @import compass/reset
 
 @import compass/utilities
+@import compass/css3
 
 +blueprint-typography
 +blueprint-grid
@@ -36,9 +37,11 @@ h2
 
 #container
   +container
+  +border-bottom-radius(15px)
   border-left: solid 1px
   border-right: solid 1px
   border-bottom: solid 1px
+  margin-bottom: $blueprint_grid_margin / 2
 
 #nav
   +column(12, true)

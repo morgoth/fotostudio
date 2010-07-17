@@ -13,16 +13,15 @@
         %ul
           %li
             %a{:href => "/"}
-              Strona
-              %span.red Główna
+              Strona Główna
           %li
-            %a{:href => "/kontakt"} Kontakt
+            %a.red{:href => "/kontakt"} Kontakt
           %li
-            %a.red{:href => "/galeria"} Galeria
+            %a{:href => "/galeria"} Galeria
           %li
-            %a{:href => "/informacje"} Informacje
+            %a.red{:href => "/informacje"} Informacje
           %li
-            %a.red{:href => "/cennik"} Cennik
+            %a{:href => "/cennik"} Cennik
       #logo
       #content
         - if @flash
