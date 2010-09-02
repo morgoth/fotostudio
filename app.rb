@@ -1,7 +1,7 @@
 # encoding: UTF-8
 
 Bundler.require
-require 'lib/google_analytics'
+require ::File.expand_path('../lib/google_analytics', __FILE__)
 
 use Rack::Flash
 use Rack::GoogleAnalytics, "UA-7563082-4"
@@ -18,6 +18,17 @@ configure do
     config.http_images_path = "/images"
     config.http_path = "/"
     config.http_stylesheets_path = "/stylesheets"
+  end
+
+  Mail.defaults do
+    delivery_method :smtp, {
+      :address        => "smtp.sendgrid.net",
+      :port           => 25,
+      :user_name      => ENV['SENDGRID_USERNAME'],
+      :password       => ENV['SENDGRID_PASSWORD'],
+      :domain         => ENV['SENDGRID_DOMAIN'],
+      :authentication => :plain
+    }
   end
 end
 
@@ -67,19 +78,15 @@ end
 
 post '/send' do
   if valid?(params)
-    Pony.mail(:to => "stronka@kasiafrychel.pl",
-              :subject=> "Wiadomość ze strony",
-              :body => erb(:email),
-              :via => :smtp, :smtp => {
-                :host => 'smtp.gmail.com',
-                :port => '587',
-                :user => ENV['GOOGLE_USER'],
-                :password => ENV['GOOGLE_PASSWORD'],
-                :auth => :plain,
-                :domain => "kasiafrychel.pl",
-                :tls => true
-               }
-             )
+    email = params["email"]
+    body = erb(:email)
+    body.force_encoding("UTF-8") if body.respond_to?(:force_encoding)
+    Mail.deliver do
+      from email
+      to "stronka@kasiafrychel.pl"
+      subject "Wiadomość ze strony"
+      body body
+    end
     flash[:notice] = 'Wiadomość została wysłana'
     redirect '/'
   else

@@ -1,57 +1,36 @@
---- 
-dependencies: 
-  compass: 
-    group: 
-    - :default
-    version: ">= 0"
-  pony: 
-    group: 
-    - :default
-    version: ">= 0"
-  haml: 
-    group: 
-    - :default
-    version: ">= 0"
-  rack-flash: 
-    group: 
-    - :default
-    version: ">= 0"
-  sinatra: 
-    group: 
-    - :default
-    version: ">= 0"
-  picasa: 
-    group: 
-    - :default
-    version: ">= 0"
-specs: 
-- activesupport: 
-    version: 2.3.8
-- haml: 
-    version: 3.0.13
-- compass: 
-    version: 0.10.2
-- mime-types: 
-    version: "1.16"
-- polyglot: 
-    version: 0.3.1
-- treetop: 
-    version: 1.4.8
-- mail: 
-    version: 2.2.5
-- xml-simple: 
-    version: 1.0.12
-- picasa: 
-    version: 0.2.1
-- pony: 
-    version: "1.0"
-- rack: 
-    version: 1.2.1
-- rack-flash: 
-    version: 0.1.1
-- sinatra: 
-    version: "1.0"
-hash: 7c51a0da15bb68787c5590c264b0f4a3e91665bb
-sources: 
-- Rubygems: 
-    uri: http://rubygems.org
+GEM
+  remote: http://rubygems.org/
+  specs:
+    activesupport (3.0.0)
+    compass (0.10.5)
+      haml (>= 3.0.4)
+    haml (3.0.18)
+    i18n (0.4.1)
+    mail (2.2.5)
+      activesupport (>= 2.3.6)
+      mime-types
+      treetop (>= 1.4.5)
+    mime-types (1.16)
+    picasa (0.2.2)
+      xml-simple
+    polyglot (0.3.1)
+    rack (1.2.1)
+    rack-flash (0.1.1)
+      rack
+    sinatra (1.0)
+      rack (>= 1.0)
+    treetop (1.4.8)
+      polyglot (>= 0.3.1)
+    xml-simple (1.0.12)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  compass
+  haml
+  i18n
+  mail
+  picasa
+  rack-flash
+  sinatra

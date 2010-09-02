@@ -1,8 +1,7 @@
-require 'rubygems'
-require 'bundler'
-Bundler.setup
+require "rubygems"
+require "bundler/setup"
 
-require 'sinatra'
-require "app"
+require "sinatra"
+require ::File.expand_path("../app", __FILE__)
 
 run Sinatra::Application
