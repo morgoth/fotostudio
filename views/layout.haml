@@ -5,15 +5,14 @@
     %meta{:name => "keywords", :content => "fotografia, kasia, katarzyna, frychel, wnętrzak, gilowice, zdjęcia, sesja ciążowa, sesja ślubna, sesja dziecięca"}
     %meta{:name => "description", :content => "Kasia Frychel - wykonywanie zdjęć oraz ich profesjonalna obróbka. Fotografia dziecięca, ślubna, ciążowa. Przystępne ceny oraz krótki czas realizacji"}
     %link{:href => "/stylesheets/screen.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}
-    %title= "Kasia Frychel - fotografia"
+    %title Kasia Frychel - fotografia
 
   %body
     #container
-      #nav
+      %nav
         %ul
           %li
-            %a{:href => "/"}
-              Strona Główna
+            %a{:href => "/"} Strona Główna
           %li
             %a.red{:href => "/kontakt"} Kontakt
           %li
@@ -28,5 +27,5 @@
           .flash
             = @flash
         = yield
-      #footer
-        &copy; 2010 Katarzyna Frychel-Wnętrzak
+      %footer
+        &copy; 2011 Katarzyna Frychel-Wnętrzak
