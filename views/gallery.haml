@@ -5,7 +5,7 @@
   - @galleries.each do |gallery|
     .photo
       .member
-        %a{:href => "#{gallery[:slideshow]}"}
+        %a{:href => gallery[:slideshow]}
           %img{:src => gallery[:thumbnail]}
       .member
         = gallery[:title]

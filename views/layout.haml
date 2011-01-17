@@ -5,6 +5,7 @@
     %meta{:name => "keywords", :content => "fotografia, kasia, katarzyna, frychel, wnętrzak, gilowice, zdjęcia, sesja ciążowa, sesja ślubna, sesja dziecięca"}
     %meta{:name => "description", :content => "Kasia Frychel - wykonywanie zdjęć oraz ich profesjonalna obróbka. Fotografia dziecięca, ślubna, ciążowa. Przystępne ceny oraz krótki czas realizacji"}
     %link{:href => "/stylesheets/screen.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => 'http://fonts.googleapis.com/css?family=Merriweather|Philosopher', :rel => 'stylesheet', :type => 'text/css'}
     %title Kasia Frychel - fotografia
 
   %body
@@ -22,7 +23,7 @@
           %li
             %a{:href => "/cennik"} Cennik
       #logo
-      #content
+      %section#content
         - if @flash
           .flash
             = @flash
