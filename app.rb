@@ -8,7 +8,7 @@ use Rack::GoogleAnalytics, "UA-7563082-4"
 
 configure do
   set :app_file, __FILE__
-  set :haml, { :format => :html5 }
+  set :haml, {:format => :html5}
   set :sessions, true
 
   Compass.configuration do |config|

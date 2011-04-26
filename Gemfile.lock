@@ -1,13 +1,15 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    activesupport (3.0.3)
-    compass (0.10.6)
-      haml (>= 3.0.4)
-    haml (3.0.25)
+    chunky_png (1.1.1)
+    compass (0.11.1)
+      chunky_png (~> 1.1)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+    fssm (0.2.7)
+    haml (3.1.1)
     i18n (0.5.0)
-    mail (2.2.14)
-      activesupport (>= 2.3.6)
+    mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -15,16 +17,17 @@ GEM
     picasa (0.2.2)
       xml-simple
     polyglot (0.3.1)
-    rack (1.2.1)
+    rack (1.2.2)
     rack-flash (0.1.1)
       rack
-    sinatra (1.1.2)
+    sass (3.1.1)
+    sinatra (1.2.3)
       rack (~> 1.1)
-      tilt (~> 1.2)
+      tilt (< 2.0, >= 1.2.2)
     tilt (1.2.2)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
-    xml-simple (1.0.12)
+    xml-simple (1.0.15)
 
 PLATFORMS
   ruby
@@ -36,4 +39,5 @@ DEPENDENCIES
   mail
   picasa
   rack-flash
+  sass
   sinatra
