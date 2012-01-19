@@ -1,10 +1,11 @@
-source :rubygems
+source "http://rubygems.org"
 
 gem "sinatra"
 gem "haml"
 gem "sass"
 gem "compass"
 gem "picasa"
+gem "rack", "~> 1.3.6"
 gem "rack-flash"
 gem "mail"
 gem "i18n"

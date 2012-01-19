@@ -1,10 +1,8 @@
 # encoding: UTF-8
 
 Bundler.require
-require ::File.expand_path('../lib/google_analytics', __FILE__)
 
 use Rack::Flash
-use Rack::GoogleAnalytics, "UA-7563082-4"
 
 configure do
   set :app_file, __FILE__
