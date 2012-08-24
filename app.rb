@@ -69,7 +69,7 @@ get "/cennik/?" do
 end
 
 get "/galeria/?" do
-  @galleries = Picasa.albums(:google_user => "kasiafrychel.foto")
+  @galleries = Picasa::Client.new(user_id: "kasiafrychel.foto").album.list.albums
   haml :gallery
 end
 
